@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -45,5 +46,4 @@ public class ExtentReportManager {
 		return "./AutomationReport/ExtentReport"+format.format(c.getTime())+"/Report.html";
 	}
 	
-
 }

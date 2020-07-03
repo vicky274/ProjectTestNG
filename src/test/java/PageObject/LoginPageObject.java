@@ -4,33 +4,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-//page object
+
 public class LoginPageObject {
 
 	WebDriver driver;
-	@FindBy(xpath="//input[@name='email']")
+	@FindBy(xpath="//input[@id='email::content']")
 	public WebElement Email;
-	@FindBy(xpath="//input[@name='phone']")
-	public WebElement Phone;
-	@FindBy(xpath="//input[@name='address']")
-	public WebElement Address;
-	@FindBy(xpath="//input[@name='city']")
-	public WebElement city	;
-	@FindBy(xpath="//input[@name='first_name']")
+	@FindBy(xpath="//input[@id='password::content']")
+	public WebElement Password;
+	@FindBy(xpath="//input[@id='retypePassword::content']")
+	public WebElement Retype_password;
+	@FindBy(xpath="//input[@id='companyName::content']")
+	public WebElement Company_Name	;
+	@FindBy(xpath="//input[@id='firstName::content']")
 	public WebElement Name;
-	@FindBy(xpath="//input[@name='last_name']")
+	@FindBy(xpath="//input[@id='lastName::content']")
 	public WebElement Last_Name;
-	@FindBy(xpath="//input[@name='zip']")
-	public WebElement zipCode;
-	@FindBy(xpath="//input[@name='website']")
-	public WebElement website;
-	@FindBy(xpath="//select[@name='state']")
-	public WebElement Dropdown;
-	@FindBy(xpath="//input[@name='hosting']")
-	public WebElement Radiobutton;
-	@FindBy(xpath="//button[@type='submit']")
-	public WebElement Submit;
+	@FindBy(xpath="//input[@id='jobTitle::content']")
+	public WebElement Title;
+	@FindBy(xpath="//input[@id='workPhone::content']")
+	public WebElement Work_Phone;
 	
 	public LoginPageObject(WebDriver driver){
 		this.driver=driver;
@@ -43,27 +36,27 @@ public class LoginPageObject {
 		Email.sendKeys(email);
 	}
 	
-	public void enterPhone(String phone) throws InterruptedException{
-		Phone.clear();
+	public void enterpassword(String password) throws InterruptedException{
+		Password.clear();
 		Thread.sleep(500);
-		Phone.sendKeys(phone);
+		Password.sendKeys(password);
 	}
 	
-	public void enterAddress(String address) throws InterruptedException{
-		Address.clear();
+	public void Retype_password(String password) throws InterruptedException{
+		Retype_password.clear();
 		Thread.sleep(500);
-		Address.sendKeys(address);
-	}
-	
-	
-	public void entercity(String City) throws InterruptedException{
-		city.clear();
-		Thread.sleep(500);
-		city.sendKeys(City);
+		Retype_password.sendKeys(password);
 	}
 	
 	
-	public void enterfirstName(String name) throws InterruptedException{
+	public void Company_Name(String Company_name) throws InterruptedException{
+		Company_Name.clear();
+		Thread.sleep(500);
+		Company_Name.sendKeys(Company_name);
+	}
+	
+	
+	public void Name(String name) throws InterruptedException{
 		Name.clear();
 		Thread.sleep(500);
 		Name.sendKeys(name);
@@ -76,31 +69,15 @@ public class LoginPageObject {
 	}
 	
 
-	public void enterzipCode(String zip) throws InterruptedException{
-		zipCode.clear();
+	public void enterJobtitle(String job) throws InterruptedException{
+		Title.clear();
 		Thread.sleep(500);
-		zipCode.sendKeys(zip);
+		Title.sendKeys(job);
 	}
 	
-	public void enterwebsite(String web) throws InterruptedException{
-		website.clear();
+	public void enterWorkphone(String phone) throws InterruptedException{
+		Work_Phone.clear();
 		Thread.sleep(500);
-		website.sendKeys(web);
+		Work_Phone.sendKeys(phone);
 	}
-	
-	public void selectDropdown(String Drop) throws InterruptedException{
-		Select s=new Select(Dropdown);
-		s.selectByVisibleText(Drop);
-	}
-	
-	public void clickRadiobutton() throws InterruptedException{
-		Thread.sleep(500);
-		Radiobutton.click();
-	}
-	
-	public void entersubmit(String sub) throws InterruptedException{
-		Thread.sleep(500);
-		Submit.click();
-	}
-	
 }

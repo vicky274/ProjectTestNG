@@ -54,7 +54,9 @@ public class Driverhandle {
 	
 	public static WebDriver setup(String url) throws IOException{
 	
-		switch(getvalue("browser")){
+		try{
+		switch(getvalue("browser"))
+		{
 		case "chrome":
 			service = new ChromeDriverService.Builder()
 			.usingDriverExecutable(new File(getvalue("jarfile"))).usingAnyFreePort().withSilent(true).build();
@@ -62,9 +64,14 @@ public class Driverhandle {
 			driver = new ChromeDriver(service);
 			driver.get(url);
 			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			
+		}
+		
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 		return driver;
 	}

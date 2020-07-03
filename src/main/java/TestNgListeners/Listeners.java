@@ -24,7 +24,7 @@ import Utility.Capturescreenshot;
 public class Listeners implements ITestListener ,ISuiteListener{
 	
 	private static ExtentReports extent = ExtentReportManager.CreateInstance();
-	ExtentTest test = ExtentReportManager.test;
+	static ExtentTest test = ExtentReportManager.test;
 	//private static ThreadLocal<ExtentTest> extenttest=new ThreadLocal<ExtentTest>();
 	
 	
@@ -39,8 +39,8 @@ public class Listeners implements ITestListener ,ISuiteListener{
 	public void onStart(ITestContext Context) {
 		/*ExtentTest test = extent.createTest(Context.getClass().getName()+"  : ", Context.getName());
 		test.log(Status.INFO, "Regression Test Execution Started");
-		extenttest.set(test);*/
-	}
+		//extenttest.set(test);
+*/	}
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
