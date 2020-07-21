@@ -19,12 +19,11 @@ import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import ExtentManager.Driverhandle;
 import ExtentReportListener.ExtentReportManager;
+import ExtentReportListener.ExtentTestManager;
 import Utility.Capturescreenshot;
 
 public class Listeners implements ITestListener ,ISuiteListener{
 	
-	private static ExtentReports extent = ExtentReportManager.CreateInstance();
-	static ExtentTest test = ExtentReportManager.test;
 	//private static ThreadLocal<ExtentTest> extenttest=new ThreadLocal<ExtentTest>();
 	
 	
@@ -52,10 +51,10 @@ public class Listeners implements ITestListener ,ISuiteListener{
 		
 		try {
 			
-			test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test Case Failed", ExtentColor.RED));
-			test.fail(MarkupHelper.createLabel(result.getThrowable().getMessage(), ExtentColor.RED));
+			ExtentTestManager.getTest().log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test Case Failed", ExtentColor.RED));
+			 ExtentTestManager.getTest().fail(MarkupHelper.createLabel(result.getThrowable().getMessage(), ExtentColor.RED));
 			//test.fail(result.getThrowable().getMessage());
-			test.fail(result.getName()+" Failed", MediaEntityBuilder.
+			 ExtentTestManager.getTest().fail(result.getName()+" Failed", MediaEntityBuilder.
 					createScreenCaptureFromPath(Capturescreenshot.capturescreenshot(result.getMethod().getMethodName()))
 					.build());
 		} catch (IOException e) {
@@ -72,20 +71,15 @@ public class Listeners implements ITestListener ,ISuiteListener{
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		/*ExtentTest test= extent.createTest(result.getName());
-		test.log(Status.INFO, result.getName()+" Started Execution");
-		extenttest.set(test);*/
-		
-		test= extent.createTest(result.getName());
-		test.log(Status.INFO, MarkupHelper.createLabel(result.getName()+" Started Test Case Execution", ExtentColor.INDIGO));
-		//test.log(Status.INFO, result.getName()+" Started Test Case Execution");
+		ExtentTestManager.CreateTest(result.getName());
+		ExtentTestManager.getTest().log(Status.INFO, MarkupHelper.createLabel(result.getName()+" Started Test Case Execution", ExtentColor.INDIGO));
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		try {
-			test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
-			test.pass(result.getName()+" Passed", 
+			 ExtentTestManager.getTest().log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
+			 ExtentTestManager.getTest().pass(result.getName()+" Passed", 
 			MediaEntityBuilder.createScreenCaptureFromPath(Capturescreenshot.capturescreenshot(result.getName())).build());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -94,9 +88,7 @@ public class Listeners implements ITestListener ,ISuiteListener{
 
 	@Override
 	public void onFinish(ISuite arg0) {
-		extent.flush();
-		
-		
+		ExtentTestManager.endTest();	
 	}
 
 	@Override

@@ -19,6 +19,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import ExtentManager.Driverhandle;
 import ExtentReportListener.ExtentReportManager;
+import ExtentReportListener.ExtentTestManager;
 import PageObject.LoginPageObject;
 import TestData.TestDataFromExcel;
 
@@ -26,9 +27,8 @@ import TestData.TestDataFromExcel;
 public class LoginPageTest {
 
 	LoginPageObject LoginPageObject;
-	static ExtentTest test;
-	static SoftAssert s;
-	static WebDriver driver;
+	private static SoftAssert s;
+	private static WebDriver driver;
 	Driverhandle handle;
 
 	@BeforeClass
@@ -46,11 +46,11 @@ public class LoginPageTest {
 	@BeforeMethod
 	public void initializeObject() throws Exception {
 		LoginPageObject = new LoginPageObject(driver);
-		test = ExtentReportManager.test;
 	}
 
 	@Test(priority = 2)
 	public void TableDataforTest() throws Exception {
+		ExtentTestManager.getTest().log(Status.INFO, "TableDataforTest Started");
 		Object[][] data = TestDataFromExcel.getCellData("Sheet1");
 		String[][] a = new String[data.length][data[0].length];
 
@@ -63,25 +63,25 @@ public class LoginPageTest {
 
 		Markup m = MarkupHelper.createTable(a);
 		Markup m1 = MarkupHelper.createCodeBlock("<Emp>Vicky</Emp>" + "<Salary>2000</Salary>", CodeLanguage.XML);
-		test.pass(m);
-		test.pass(m1);
+		ExtentTestManager.getTest().pass(m);
+		ExtentTestManager.getTest().pass(m1);
 	}
 
-	/*@DataProvider(name = "dataprovider")
+	@DataProvider(name = "dataprovider")
 	public Object[][] oracledata() throws Exception {
 		return TestDataFromExcel.getCellData("Sheet1");
 
 	}
 
 	@Test(priority = 1, dataProvider = "dataprovider")
-	public void TestOracle(String email, String password, String retype, String name, String Last_name, String job,
+	public void TestOracleWebPage(String email, String password, String retype, String name, String Last_name, String job,
 			String phone, String company_name) throws Exception {
-
-		test.log(Status.INFO, "Enter Email");
+		ExtentTestManager.getTest().log(Status.INFO, "TestOracleWebPage Step Execution Started");
+		ExtentTestManager.getTest().log(Status.INFO, "Enter Email");
 		LoginPageObject.enteremail(email);
-		test.log(Status.INFO, "Enter password");
+		ExtentTestManager.getTest().log(Status.INFO, "Enter password");
 		LoginPageObject.enterpassword(password);
-		test.log(Status.INFO, "Enter retype password");
+		ExtentTestManager.getTest().log(Status.INFO, "Enter retype password");
 		LoginPageObject.Retype_password(retype);
 		LoginPageObject.Name(name);
 		LoginPageObject.enterlastName(Last_name);
@@ -89,7 +89,7 @@ public class LoginPageTest {
 		LoginPageObject.enterJobtitle(job);
 		LoginPageObject.enterWorkphone(phone);
 
-	}*/
+	}
 
 	@AfterClass
 	public void quit() throws InterruptedException {

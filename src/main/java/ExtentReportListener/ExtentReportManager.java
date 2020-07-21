@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 
@@ -19,11 +21,9 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import ExtentManager.Driverhandle;
 
 public class ExtentReportManager {
-
+	
 	private static ExtentReports extent=null;
 	private static ExtentHtmlReporter htmlreporter=null;
-	//private static final String reportname="./ExtentReport/Report.html";
-	public static ExtentTest test=null;
 	
 	public static ExtentReports CreateInstance(){
 		  htmlreporter = new ExtentHtmlReporter(reportname());

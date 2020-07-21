@@ -10,14 +10,6 @@
           <include name="SubractionTest"/>
         </methods>
       </class> <!-- TestAuto.TechAutoTest -->
-      <class name="TestAuto.LoginPageTest">
-        <methods>
-          <include name="TableDataforTest"/>
-          <include name="quit"/>
-          <include name="initializeObject"/>
-          <include name="Initializedriver"/>
-        </methods>
-      </class> <!-- TestAuto.LoginPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
