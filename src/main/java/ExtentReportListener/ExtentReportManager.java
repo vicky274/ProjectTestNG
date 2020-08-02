@@ -18,7 +18,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import ExtentManager.Driverhandle;
+import ExtentManager.BrowserFactory;
 
 public class ExtentReportManager {
 	

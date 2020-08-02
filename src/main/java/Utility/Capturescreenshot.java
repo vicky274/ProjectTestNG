@@ -10,14 +10,16 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import ExtentManager.Driverhandle;
+import com.fasterxml.jackson.databind.Module.SetupContext;
 
-public class Capturescreenshot extends Driverhandle{
+import ExtentManager.BrowserFactory;
 
-	public static String capturescreenshot(String screenshotName) throws IOException {
+public class Capturescreenshot {
+
+	public  static String capturescreenshot(WebDriver driver, String screenshotName) throws IOException {
 		String dest = "./Screenshot/"+screenshotName+timestamp()+".png";
 		
-		TakesScreenshot ts = (TakesScreenshot) Driverhandle.driver;
+		TakesScreenshot ts = (TakesScreenshot)driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
         File destination = new File(dest);
         FileUtils.copyFile(source, destination);

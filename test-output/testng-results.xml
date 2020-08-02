@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="67147" started-at="2020-07-03T07:10:36Z" finished-at="2020-07-03T07:11:44Z">
+  <suite name="Suite" duration-ms="78619" started-at="2020-07-28T15:18:11Z" finished-at="2020-07-28T15:19:30Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="67147" started-at="2020-07-03T07:10:36Z" finished-at="2020-07-03T07:11:44Z">
+    <test name="AutomationChromeTest" duration-ms="78619" started-at="2020-07-28T15:18:11Z" finished-at="2020-07-28T15:19:30Z">
       <class name="TestAuto.TechAutoTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestAuto.TechAutoTest@4cf777e8]" name="beforeMethod" is-config="true" duration-ms="26090" started-at="2020-07-03T12:40:36Z" finished-at="2020-07-03T12:41:03Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestAuto.TechAutoTest@4cf777e8]" name="beforeMethod" is-config="true" duration-ms="26468" started-at="2020-07-28T20:48:11Z" finished-at="2020-07-28T20:48:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="AdditionTest()[pri:0, instance:TestAuto.TechAutoTest@4cf777e8]" name="AdditionTest" duration-ms="1368" started-at="2020-07-03T12:41:03Z" finished-at="2020-07-03T12:41:04Z">
+        <test-method status="PASS" signature="AdditionTest()[pri:0, instance:TestAuto.TechAutoTest@4cf777e8]" name="AdditionTest" duration-ms="328" started-at="2020-07-28T20:48:38Z" finished-at="2020-07-28T20:48:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AdditionTest -->
-        <test-method status="FAIL" signature="SubractionTest()[pri:1, instance:TestAuto.TechAutoTest@4cf777e8]" name="SubractionTest" duration-ms="13" started-at="2020-07-03T12:41:07Z" finished-at="2020-07-03T12:41:07Z">
+        <test-method status="FAIL" signature="SubractionTest()[pri:1, instance:TestAuto.TechAutoTest@4cf777e8]" name="SubractionTest" duration-ms="47" started-at="2020-07-28T20:48:39Z" finished-at="2020-07-28T20:48:39Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
@@ -36,42 +36,34 @@
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubractionTest -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:TestAuto.TechAutoTest@4cf777e8]" name="quit" is-config="true" duration-ms="4139" started-at="2020-07-03T12:41:08Z" finished-at="2020-07-03T12:41:12Z">
+        <test-method status="PASS" signature="quit()[pri:0, instance:TestAuto.TechAutoTest@4cf777e8]" name="quit" is-config="true" duration-ms="3825" started-at="2020-07-28T20:48:39Z" finished-at="2020-07-28T20:48:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- TestAuto.TechAutoTest -->
       <class name="TestAuto.LoginPageTest">
-        <test-method status="PASS" signature="Initializedriver()[pri:0, instance:TestAuto.LoginPageTest@2f686d1f]" name="Initializedriver" is-config="true" duration-ms="10293" started-at="2020-07-03T12:41:12Z" finished-at="2020-07-03T12:41:22Z">
+        <test-method status="PASS" signature="Initializedriver()[pri:0, instance:TestAuto.LoginPageTest@2f686d1f]" name="Initializedriver" is-config="true" duration-ms="21628" started-at="2020-07-28T20:48:39Z" finished-at="2020-07-28T20:49:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initializedriver -->
-        <test-method status="PASS" signature="initializeObject()[pri:0, instance:TestAuto.LoginPageTest@2f686d1f]" name="initializeObject" is-config="true" duration-ms="109" started-at="2020-07-03T12:41:31Z" finished-at="2020-07-03T12:41:31Z">
+        <test-method status="PASS" signature="initializeObject()[pri:0, instance:TestAuto.LoginPageTest@2f686d1f]" name="initializeObject" is-config="true" duration-ms="745" started-at="2020-07-28T20:49:00Z" finished-at="2020-07-28T20:49:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeObject -->
-        <test-method status="PASS" signature="TestOracleWebPage(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:TestAuto.LoginPageTest@2f686d1f]" name="TestOracleWebPage" duration-ms="7279" started-at="2020-07-03T12:41:31Z" data-provider="dataprovider" finished-at="2020-07-03T12:41:38Z">
+        <test-method status="PASS" signature="TableDataforTest()[pri:2, instance:TestAuto.LoginPageTest@2f686d1f]" name="TableDataforTest" duration-ms="15952" started-at="2020-07-28T20:49:01Z" finished-at="2020-07-28T20:49:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TableDataforTest -->
+        <test-method status="PASS" signature="TestOracleWebPage(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:TestAuto.LoginPageTest@2f686d1f]" name="TestOracleWebPage" duration-ms="7867" started-at="2020-07-28T20:49:17Z" data-provider="dataprovider" finished-at="2020-07-28T20:49:25Z">
           <params>
             <param index="0">
               <value>
@@ -117,19 +109,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestOracleWebPage -->
-        <test-method status="PASS" signature="initializeObject()[pri:0, instance:TestAuto.LoginPageTest@2f686d1f]" name="initializeObject" is-config="true" duration-ms="4" started-at="2020-07-03T12:41:39Z" finished-at="2020-07-03T12:41:39Z">
+        <test-method status="PASS" signature="initializeObject()[pri:0, instance:TestAuto.LoginPageTest@2f686d1f]" name="initializeObject" is-config="true" duration-ms="0" started-at="2020-07-28T20:49:17Z" finished-at="2020-07-28T20:49:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeObject -->
-        <test-method status="PASS" signature="TableDataforTest()[pri:2, instance:TestAuto.LoginPageTest@2f686d1f]" name="TableDataforTest" duration-ms="67" started-at="2020-07-03T12:41:39Z" finished-at="2020-07-03T12:41:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TableDataforTest -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:TestAuto.LoginPageTest@2f686d1f]" name="quit" is-config="true" duration-ms="4080" started-at="2020-07-03T12:41:39Z" finished-at="2020-07-03T12:41:44Z">
+        <test-method status="PASS" signature="quit()[pri:0, instance:TestAuto.LoginPageTest@2f686d1f]" name="quit" is-config="true" duration-ms="4388" started-at="2020-07-28T20:49:25Z" finished-at="2020-07-28T20:49:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- TestAuto.LoginPageTest -->
-    </test> <!-- Test -->
+    </test> <!-- AutomationChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>

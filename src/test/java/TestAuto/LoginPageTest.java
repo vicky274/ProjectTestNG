@@ -5,7 +5,9 @@ import java.io.IOException;
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -17,30 +19,31 @@ import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
-import ExtentManager.Driverhandle;
+import ExtentManager.BrowserFactory;
 import ExtentReportListener.ExtentReportManager;
 import ExtentReportListener.ExtentTestManager;
 import PageObject.LoginPageObject;
 import TestData.TestDataFromExcel;
 
-@Listeners(TestNgListeners.Listeners.class)
+/*@Listeners(TestNgListeners.TestStatusListeners.class)*/
 public class LoginPageTest {
 
 	LoginPageObject LoginPageObject;
 	private static SoftAssert s;
-	private static WebDriver driver;
-	Driverhandle handle;
+	private WebDriver driver;
+	private BrowserFactory BrowserFac;
 
-	@BeforeClass
+	@BeforeTest
 	public void Initializedriver() {
 		try {
-			handle = new Driverhandle();
-			System.out.println(Driverhandle.getvalue("url"));
-			driver = Driverhandle.setup(Driverhandle.getvalue("url"));
+			BrowserFac = BrowserFactory.getinstance();
+			System.out.println(BrowserFac.getvalue("url"));
+			BrowserFac.setup();
+			this.driver = BrowserFac.getDriver();
+			driver.get(BrowserFac.getvalue("url"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@BeforeMethod
@@ -74,8 +77,8 @@ public class LoginPageTest {
 	}
 
 	@Test(priority = 1, dataProvider = "dataprovider")
-	public void TestOracleWebPage(String email, String password, String retype, String name, String Last_name, String job,
-			String phone, String company_name) throws Exception {
+	public void TestOracleWebPage(String email, String password, String retype, String name, String Last_name,
+			String job, String phone, String company_name) throws Exception {
 		ExtentTestManager.getTest().log(Status.INFO, "TestOracleWebPage Step Execution Started");
 		ExtentTestManager.getTest().log(Status.INFO, "Enter Email");
 		LoginPageObject.enteremail(email);
@@ -91,10 +94,16 @@ public class LoginPageTest {
 
 	}
 
-	@AfterClass
-	public void quit() throws InterruptedException {
-		Thread.sleep(3000);
-		driver.quit();
+	@AfterTest
+	public void CloseBrowser() {
+		try {
+			Thread.sleep(2000);
+			driver.close();
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
 	}
 
 	/*

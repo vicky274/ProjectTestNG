@@ -155,7 +155,10 @@
                   <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
 	Not as Expected expected [true] but found [false]
 	at TestAuto.TechAutoTest.SubractionTest(TechAutoTest.java:51)
-... Removed 26 stack frames
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 11 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -209,12 +212,12 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;test name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;2&quot; name=&quot;AutomationChromeTest&quot; parallel=&quot;classes&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;TestAuto.TechAutoTest&quot;/&gt;
       &lt;class name=&quot;TestAuto.LoginPageTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- AutomationChromeTest --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -226,7 +229,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">AutomationChromeTest (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -254,26 +257,26 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TestOracleWebPage')
+data.setCell(0, 1, 'TableDataforTest')
 data.setCell(0, 2, 'TestAuto.LoginPageTest')
-data.setCell(0, 3, 7279);
+data.setCell(0, 3, 15952);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'AdditionTest')
-data.setCell(1, 2, 'TestAuto.TechAutoTest')
-data.setCell(1, 3, 1368);
+data.setCell(1, 1, 'TestOracleWebPage')
+data.setCell(1, 2, 'TestAuto.LoginPageTest')
+data.setCell(1, 3, 7867);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TableDataforTest')
-data.setCell(2, 2, 'TestAuto.LoginPageTest')
-data.setCell(2, 3, 67);
+data.setCell(2, 1, 'AdditionTest')
+data.setCell(2, 2, 'TestAuto.TechAutoTest')
+data.setCell(2, 3, 328);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'SubractionTest')
 data.setCell(3, 2, 'TestAuto.TechAutoTest')
-data.setCell(3, 3, 13);
+data.setCell(3, 3, 47);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -306,44 +309,50 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">AdditionTest</span>
-                <span class="method-start">26122 ms</span>
+                <span class="method-start">26515 ms</span>
               </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">SubractionTest</span>
-                <span class="method-start">30479 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">quit</span>
-                <span class="method-start">31142 ms</span>
-              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestAuto.LoginPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">Initializedriver</span>
-                <span class="method-start">35282 ms</span>
+                <span class="method-start">27477 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeObject</span>
-                <span class="method-start">54466 ms</span>
-              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestAuto.TechAutoTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">TestOracleWebPage(vimessi22@gmail.com, Vicky123, Vicky123, vignesh, Elangovan, Testing, 7259635699, Cognizant)</span>
-                <span class="method-start">54575 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeObject</span>
-                <span class="method-start">62480 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">TableDataforTest</span>
-                <span class="method-start">62484 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">SubractionTest</span>
+                <span class="method-start">27477 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">quit</span>
-                <span class="method-start">63001 ms</span>
+                <span class="method-start">28003 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestAuto.LoginPageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">initializeObject</span>
+                <span class="method-start">49111 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">TableDataforTest</span>
+                <span class="method-start">49856 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">initializeObject</span>
+                <span class="method-start">65838 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">TestOracleWebPage(vimessi22@gmail.com, Vicky123, Vicky123, vignesh, Elangovan, Testing, 7259635699, Cognizant)</span>
+                <span class="method-start">65838 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">quit</span>
+                <span class="method-start">74216 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

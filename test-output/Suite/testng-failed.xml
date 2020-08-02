@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test(failed)">
+  <test name="AutomationChromeTest(failed)" parallel="classes">
     <classes>
       <class name="TestAuto.TechAutoTest">
         <methods>
@@ -11,5 +11,5 @@
         </methods>
       </class> <!-- TestAuto.TechAutoTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- AutomationChromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

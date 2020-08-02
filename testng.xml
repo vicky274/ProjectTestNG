@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test name="Test" preserve-order="true">
+<suite  name="Suite" parallel="tests" thread-count="2">
+
+<listeners>
+		<listener
+			class-name="TestNgListeners.TestStatusListeners" />
+	</listeners>
+	
+	
+  <test name="AutomationChromeTest1">
     <classes>
-      <class name="TestAuto.TechAutoTest"/>
       <class name="TestAuto.LoginPageTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test> <!-- AutomationChromeTest -->
+  
+  
+  <test name="AutomationChromeTest2">
+    <classes>
+      <class name="TestAuto.TechAutoTest"/>
+    </classes>
+  </test> <!-- AutomationChromeTest -->
+  
+  
 </suite> <!-- Suite -->
